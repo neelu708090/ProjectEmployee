@@ -1,0 +1,16 @@
+{% extends "empDetail/base.html"%}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset >
+                <legend >Update Employee</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div >
+                <button type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

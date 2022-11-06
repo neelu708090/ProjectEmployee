@@ -1,0 +1,22 @@
+{% extends "empDetail/base.html" %}
+{% block content %}
+    <div>
+        <table>
+            <tr>
+                <th>Description</th>
+                <th>Joining Date</th>
+            </tr>
+            <tr>
+                <td>{{ employee.description }}</td>
+                <td>{{ employee.joining_date|date:'M d, Y'}}</td>
+            </tr>
+
+        
+        </table>
+    </div>
+    <br>
+    <div>
+        <a class = "del" href="{% url 'delete-employee' object.id %}">Delete Employee</a>
+        <a class = "update" href="{% url 'update-employee' object.id %}">Update Employee</a>
+    </div>
+{% endblock content %}

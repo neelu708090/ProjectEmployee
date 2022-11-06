@@ -1,0 +1,40 @@
+.nav-bar {
+  background-color:yellowgreen;
+  padding: 10px 20px;
+}
+.in-nav{
+  margin-right: 10px;
+}
+.main {
+  background-color: #ddb8b8;
+  text-align: center;
+  padding: 20px;
+}
+.del{
+  background-color:red;
+  color: black;
+  padding: 5px 10px;
+  float: right;
+}
+.update{
+  background-color:green;
+  color: black;
+  padding: 5px 10px;
+  float: right;
+}
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: center;
+}
+.right-nav{
+  margin-right: 10px;
+  float: right;
+}

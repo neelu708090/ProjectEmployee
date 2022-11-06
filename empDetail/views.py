@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from .models import Employee
 from django.views.generic import ListView,CreateView,DeleteView,DetailView,UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
 
 # Create your views here.
 
@@ -16,7 +17,11 @@ class EmployeeList(ListView):
     def get_queryset(self):
         search = self.request.GET.get("search")
         if search:
-            object_list = self.model.objects.filter(first_name__icontains = search)
+            object_list = self.model.objects.filter(
+                Q(first_name__icontains = search) |
+                Q(last_name__icontains = search) |
+                Q(description__icontains = search)
+            )
         else:
             object_list = self.model.objects.all()
 
